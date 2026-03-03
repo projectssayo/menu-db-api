@@ -17,8 +17,7 @@ signature_collection = db["signature_items"]
 app = FastAPI()
 
 
-# ROOT (Health + Info)
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 def root():
     return {
         "Get all menu items": "/get_all",
